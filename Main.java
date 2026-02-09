@@ -4,19 +4,21 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    // Rectangle area calculator
+    // Shopping Cart Mini Projech
 
-    System.out.print("Enter the rectangle width: ");
-    double width = scanner.nextDouble();
+    System.out.print("What item would you like to buy: ");
+    String item = scanner.nextLine();
 
-    System.out.print("Enter the rectangle width: ");
-    double height = scanner.nextDouble();
+    System.out.print("What is the price for each: ");
+    double price = scanner.nextDouble();
 
-    double area = width * height;
+    System.out.print("How many would you buy: ");
+    double amount = scanner.nextInt();
 
-    System.out.println("The area is: " + area);
+    System.out.println("You have bought " + amount + " " + item + "/s");
+
+    System.out.println("Your total is: $" + price * amount);
 
     scanner.close();
-
   }
 }
