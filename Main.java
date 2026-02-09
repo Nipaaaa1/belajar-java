@@ -1,21 +1,22 @@
+import java.util.Scanner;
+
 public class Main {
-  public static void main() {
-    int age = 20;
-    String name = "Nipa";
-    char grade = 'S';
-    boolean isProgrammer = true;
-    double salary = 99;
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
-    System.out.println("My name is: " + name);
-    System.out.println("I'm " + age + " years old");
-    System.out.println("My average grade: " + grade);
-    System.out.println("My salary is: " + salary);
+    // Rectangle area calculator
 
-    if (isProgrammer) {
-      System.out.println("I'm a programmer");
-    } else {
-      System.out.println("I'm not a programmer");
-    }
+    System.out.print("Enter the rectangle width: ");
+    double width = scanner.nextDouble();
+
+    System.out.print("Enter the rectangle width: ");
+    double height = scanner.nextDouble();
+
+    double area = width * height;
+
+    System.out.println("The area is: " + area);
+
+    scanner.close();
 
   }
 }
