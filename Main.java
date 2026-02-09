@@ -1,24 +1,22 @@
-import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+    Random random = new Random();
 
-    // Shopping Cart Mini Projech
+    int dice = random.nextInt(1, 7);
+    System.out.println(dice);
 
-    System.out.print("What item would you like to buy: ");
-    String item = scanner.nextLine();
+    double percent = random.nextDouble();
+    System.out.println(percent);
 
-    System.out.print("What is the price for each: ");
-    double price = scanner.nextDouble();
+    boolean coin = random.nextBoolean();
 
-    System.out.print("How many would you buy: ");
-    double amount = scanner.nextInt();
+    if (coin) {
+      System.out.println("HEADS");
+    } else {
+      System.out.println("TAILS");
+    }
 
-    System.out.println("You have bought " + amount + " " + item + "/s");
-
-    System.out.println("Your total is: $" + price * amount);
-
-    scanner.close();
   }
 }
