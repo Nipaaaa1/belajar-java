@@ -4,17 +4,23 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    // Calculate using Math lib
-    System.out.print("Enter the Radius: ");
-    double radius = scanner.nextDouble();
+    // Compound interest calculator
 
-    double circumference = 2 * Math.PI * radius;
-    double area = Math.PI * Math.pow(radius, 2);
-    double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+    System.out.print("Enter the principal amount: ");
+    double principal = scanner.nextDouble();
 
-    System.out.printf("The circumference is: %.2fcm\n", circumference);
-    System.out.printf("The area is: %.2fcm²\n", area);
-    System.out.printf("The volume is: %.2fcm³\n", volume);
+    System.out.print("Enter the interest rate (in %): ");
+    double interestRate = scanner.nextDouble() / 100;
+
+    System.out.print("Enter the # of times compounded a year: ");
+    int timeCompound = scanner.nextInt();
+
+    System.out.print("Enter the # of years: ");
+    int years = scanner.nextInt();
+
+    double total = principal * Math.pow(1 + interestRate / timeCompound, timeCompound * years);
+
+    System.out.printf("You have $%.2f\n", total);
 
     scanner.close();
   }
