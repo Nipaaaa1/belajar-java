@@ -1,21 +1,24 @@
 import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    // 14 - for loop
+    // 14 - Methods
 
-    System.out.print("Choose a number to countdown: ");
-    int count = scanner.nextInt();
+    System.out.print("Enter your age: ");
+    int age = scanner.nextInt();
 
-    for (int i = count; i > 0; i--) {
-      System.out.println(i);
-      Thread.sleep(1000);
+    if (checkAge(age)) {
+      System.out.println("You're allowed to sign up");
+    } else {
+      System.out.println("You're not allowed");
     }
 
-    System.out.println("HAPPY NEW YEAR!");
-
     scanner.close();
+  }
+
+  static boolean checkAge(int age) {
+    return age >= 18;
   }
 }
