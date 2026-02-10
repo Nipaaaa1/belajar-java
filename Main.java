@@ -1,26 +1,20 @@
 import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     Scanner scanner = new Scanner(System.in);
 
-    // 13 - do / while loop
+    // 14 - for loop
 
-    String choice = "";
+    System.out.print("Choose a number to countdown: ");
+    int count = scanner.nextInt();
 
-    while (!choice.equals("Q")) {
-      System.out.println("You are playing a game");
-      System.out.print("Enter Q to exit: ");
-      choice = scanner.next().toUpperCase();
+    for (int i = count; i > 0; i--) {
+      System.out.println(i);
+      Thread.sleep(1000);
     }
 
-    choice = "";
-
-    do {
-      System.out.println("You are playing another game");
-      System.out.print("Enter Q to exit: ");
-      choice = scanner.next().toUpperCase();
-    } while (!choice.equals("Q"));
+    System.out.println("HAPPY NEW YEAR!");
 
     scanner.close();
   }
