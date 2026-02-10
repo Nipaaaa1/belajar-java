@@ -1,22 +1,21 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    Random random = new Random();
+    Scanner scanner = new Scanner(System.in);
 
-    int dice = random.nextInt(1, 7);
-    System.out.println(dice);
+    // Calculate using Math lib
+    System.out.print("Enter the Radius: ");
+    double radius = scanner.nextDouble();
 
-    double percent = random.nextDouble();
-    System.out.println(percent);
+    double circumference = 2 * Math.PI * radius;
+    double area = Math.PI * Math.pow(radius, 2);
+    double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
 
-    boolean coin = random.nextBoolean();
+    System.out.printf("The circumference is: %.2fcm\n", circumference);
+    System.out.printf("The area is: %.2fcm²\n", area);
+    System.out.printf("The volume is: %.2fcm³\n", volume);
 
-    if (coin) {
-      System.out.println("HEADS");
-    } else {
-      System.out.println("TAILS");
-    }
-
+    scanner.close();
   }
 }
