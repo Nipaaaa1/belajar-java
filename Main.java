@@ -1,24 +1,20 @@
-import java.util.Scanner;
-
 public class Main {
+
+  static int x = 3; // Class scope
+
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
 
-    // 14 - Methods
+    // 17 - Variable scope
 
-    System.out.print("Enter your age: ");
-    int age = scanner.nextInt();
+    System.out.println(x);
 
-    if (checkAge(age)) {
-      System.out.println("You're allowed to sign up");
-    } else {
-      System.out.println("You're not allowed");
-    }
+    int x = 2; // Local scope
+    System.out.println(x);
 
-    scanner.close();
+    printX();
   }
 
-  static boolean checkAge(int age) {
-    return age >= 18;
+  static void printX() {
+    System.out.println(x); // Calls class scope
   }
 }
