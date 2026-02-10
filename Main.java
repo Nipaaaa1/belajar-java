@@ -4,23 +4,16 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    // Compound interest calculator
+    // String .substring() example
 
-    System.out.print("Enter the principal amount: ");
-    double principal = scanner.nextDouble();
+    System.out.print("Enter your email: ");
+    String email = scanner.nextLine();
 
-    System.out.print("Enter the interest rate (in %): ");
-    double interestRate = scanner.nextDouble() / 100;
+    String username = email.substring(0, email.indexOf("@"));
+    String domain = email.substring(email.indexOf("@") + 1);
 
-    System.out.print("Enter the # of times compounded a year: ");
-    int timeCompound = scanner.nextInt();
-
-    System.out.print("Enter the # of years: ");
-    int years = scanner.nextInt();
-
-    double total = principal * Math.pow(1 + interestRate / timeCompound, timeCompound * years);
-
-    System.out.printf("You have $%.2f\n", total);
+    System.out.println(username);
+    System.out.println(domain);
 
     scanner.close();
   }
