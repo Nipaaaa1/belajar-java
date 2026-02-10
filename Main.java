@@ -4,16 +4,27 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    // String .substring() example
+    // Weight conversion program
 
-    System.out.print("Enter your email: ");
-    String email = scanner.nextLine();
+    System.out.println("Weight conversion program");
+    System.out.println("1: convert pounds to kilograms");
+    System.out.println("2: convert kilograms to pounds");
+    System.out.print("Choose menu (1 or 2): ");
+    int choice = scanner.nextInt();
 
-    String username = email.substring(0, email.indexOf("@"));
-    String domain = email.substring(email.indexOf("@") + 1);
-
-    System.out.println(username);
-    System.out.println(domain);
+    if (choice == 1) {
+      System.out.print("Enter the weight it pounds: ");
+      double weight = scanner.nextDouble();
+      double newWeight = weight * 0.453592;
+      System.out.printf("The weight in kilograms is: %.2f\n", newWeight);
+    } else if (choice == 2) {
+      System.out.print("Enter the weight it kilograms: ");
+      double weight = scanner.nextDouble();
+      double newWeight = weight * 2.20462;
+      System.out.printf("The weight in pounds is: %.2f\n", newWeight);
+    } else {
+      System.out.println("Please choose the correct number.");
+    }
 
     scanner.close();
   }
