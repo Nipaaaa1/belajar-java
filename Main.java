@@ -1,14 +1,12 @@
 public class Main {
 
   public static void main(String[] args) {
-    // 25 - Constructor
+    // 26 - Static keyword
+    Friend friend1 = new Friend("Udin");
+    Friend friend2 = new Friend("Jamal");
+    Friend friend3 = new Friend("Asep");
 
-    Car car = new Car("Ford", "Mustang");
-    System.out.println(car.maker + " " + car.model);
-    car.startEngine();
-    System.out.println(car.isRunning);
-    car.stepEngine();
-    System.out.println(car.isRunning);
-    car.printDetails();
+    // Static method is accessable through the class itself
+    Friend.friendsCount();
   }
 }
