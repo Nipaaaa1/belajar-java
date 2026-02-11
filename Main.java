@@ -1,12 +1,22 @@
+import java.util.HashMap;
+
 public class Main {
 
   public static void main(String[] args) {
-    // 39 - generics
+    // 39 - hashmap
 
-    Product<String, Double> product1 = new Product<>("Gamepad", 19.99);
-    Product<String, Integer> product2 = new Product<>("Book", 10);
+    HashMap<String, Integer> map = new HashMap<>();
 
-    product1.printDetail();
-    product2.printDetail();
+    map.put("Udin", 17);
+    map.put("Wahyu", 18);
+    map.put("Jamal", 20);
+
+    System.out.println(map);
+
+    // Map on loop
+    for (String key : map.keySet()) {
+      System.out.printf("[%s:%d]\n", key, map.get(key));
+    }
+
   }
 }
