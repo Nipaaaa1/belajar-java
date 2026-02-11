@@ -1,28 +1,32 @@
-import java.util.Scanner;
-
 public class Main {
 
   public static void main(String[] args) {
-    // 21 - varargs
+    // 22 - 2D array
 
-    Scanner scanner = new Scanner(System.in);
+    String[][] groceries = {
+        { "banana", "kiwi", "apple" },
+        { "onion", "celery", "potato" },
+        { "beef", "chicken", "salmon" }
+    };
 
-    System.out.println(average(1, 2, 3, 4, 5, 6, 7));
+    // Print 2D array
+    print2DArray(groceries);
 
-    scanner.close();
+    // Accessing array
+    groceries[0][2] = "pineapple";
+
+    print2DArray(groceries);
 
   }
 
-  static double average(double... numbers) {
-    if (numbers.length == 0) {
-      return 0;
+  static void print2DArray(String[][] arrays) {
+    for (String[] array : arrays) {
+      for (String item : array) {
+        System.out.print(item + " ");
+      }
+      System.out.println();
     }
 
-    double sum = 0;
-    for (double number : numbers) {
-      sum += number;
-    }
-
-    return sum / numbers.length;
   }
+
 }
