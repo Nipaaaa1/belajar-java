@@ -1,20 +1,11 @@
 public class Main {
 
   public static void main(String[] args) {
-    // 27 - Class inheritence
+    // 28 - Super and method overriding
 
-    Dog wally = new Dog();
-    Cat kitty = new Cat();
-    Plant grass = new Plant();
+    Fish fish = new Fish("Nemo");
 
-    System.out.println(wally.isAlive);
-    System.out.println(kitty.isAlive);
-    System.out.println(grass.isAlive);
-
-    wally.eat();
-    kitty.move();
-    grass.photosynthesize();
-    wally.bark();
-    kitty.meow();
+    fish.move();
+    fish.printName();
   }
 }
