@@ -1,11 +1,12 @@
 public class Main {
 
   public static void main(String[] args) {
-    // 28 - Super and method overriding
+    // 29 - Abstract class and interface
 
-    Fish fish = new Fish("Nemo");
+    Circle circle = new Circle(5);
+    Rabbit rabbit = new Rabbit();
 
-    fish.move();
-    fish.printName();
+    System.out.println("Circle area: " + circle.area());
+    rabbit.flee();
   }
 }
