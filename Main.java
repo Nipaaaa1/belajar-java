@@ -1,18 +1,23 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Main {
 
   public static void main(String[] args) {
-    // 32 - compositions
+    // 33 - exception
 
-    Book book1 = new Book("Wandering Witch", 392);
-    Book book2 = new Book("Atomic Habits", 360);
-    Book book3 = new Book("Go programming", 500);
+    // Put scanner inside the parentheses to automatically release the resource
+    try (Scanner scanner = new Scanner(System.in)) {
+      System.out.print("Input a number: ");
+      int number = scanner.nextInt();
+      System.out.println(number);
+    } catch (ArithmeticException e) {
+      System.out.println("You can't divide by zero!");
+    } catch (InputMismatchException e) {
+      System.out.println("Please input a number");
+    } finally {
+      System.out.println("This always execute!");
+    }
 
-    Book[] books = { book1, book2, book3 };
-
-    Library library = new Library("Udin Perpus", 2026, books, "Wahyudi", 20);
-
-    library.printBookList();
-
-    library.librarian.greetings();
   }
 }
