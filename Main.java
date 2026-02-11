@@ -1,12 +1,20 @@
 public class Main {
 
   public static void main(String[] args) {
-    // 26 - Static keyword
-    Friend friend1 = new Friend("Udin");
-    Friend friend2 = new Friend("Jamal");
-    Friend friend3 = new Friend("Asep");
+    // 27 - Class inheritence
 
-    // Static method is accessable through the class itself
-    Friend.friendsCount();
+    Dog wally = new Dog();
+    Cat kitty = new Cat();
+    Plant grass = new Plant();
+
+    System.out.println(wally.isAlive);
+    System.out.println(kitty.isAlive);
+    System.out.println(grass.isAlive);
+
+    wally.eat();
+    kitty.move();
+    grass.photosynthesize();
+    wally.bark();
+    kitty.meow();
   }
 }
