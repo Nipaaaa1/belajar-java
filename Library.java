@@ -2,11 +2,13 @@ public class Library {
   String name;
   int year;
   Book[] books;
+  Person librarian;
 
-  Library(String name, int year, Book[] books) {
+  Library(String name, int year, Book[] books, String librarian, int librarianAge) {
     this.name = name;
     this.year = year;
     this.books = books;
+    this.librarian = new Person(librarian, librarianAge);
   }
 
   void printBookList() {
