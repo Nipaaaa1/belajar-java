@@ -1,22 +1,23 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
 
   public static void main(String[] args) {
-    // 33 - exception
+    // 34 - File writing
 
-    // Put scanner inside the parentheses to automatically release the resource
-    try (Scanner scanner = new Scanner(System.in)) {
-      System.out.print("Input a number: ");
-      int number = scanner.nextInt();
-      System.out.println(number);
-    } catch (ArithmeticException e) {
-      System.out.println("You can't divide by zero!");
-    } catch (InputMismatchException e) {
-      System.out.println("Please input a number");
-    } finally {
-      System.out.println("This always execute!");
+    String fileContent = """
+        Hello
+        This is file writing
+        in java
+        """;
+    String filePath = "file.txt";
+
+    try (FileWriter writer = new FileWriter(filePath)) {
+      writer.write(fileContent);
+      System.out.println("File created!");
+    } catch (IOException e) {
+      System.out.println(e.getMessage());
     }
 
   }
