@@ -1,21 +1,23 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
 
   public static void main(String[] args) {
-    // 34 - File writing
+    // 35 - File reading
 
-    String fileContent = """
-        Hello
-        This is file writing
-        in java
-        """;
     String filePath = "file.txt";
 
-    try (FileWriter writer = new FileWriter(filePath)) {
-      writer.write(fileContent);
-      System.out.println("File created!");
+    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+      String line;
+      while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+      }
+    } catch (FileNotFoundException e) {
+      System.out.println(e.getMessage());
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
