@@ -1,37 +1,28 @@
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
   public static void main(String[] args) {
-    // 19 - Arrays
+    // 20 - Arrays assignment
 
-    String[] fruits = { "apple", "maple", "banana", "kiwi" };
+    Scanner scanner = new Scanner(System.in);
 
-    System.out.println(fruits); // Print memory adresses
+    System.out.print("Enter # of fruits: ");
+    int size = scanner.nextInt();
+    scanner.nextLine(); // Clear buffer from newline
 
-    // Print all member using fer loop
+    String[] fruits = new String[size];
+
     for (int i = 0; i < fruits.length; i++) {
-      System.out.println(fruits[i]);
+      System.out.print("Enter the fruit name: ");
+      fruits[i] = scanner.nextLine();
     }
 
-    // Print using enhanced for loop / for each
     for (String fruit : fruits) {
       System.out.println(fruit);
     }
 
-    Arrays.sort(fruits);
+    scanner.close();
 
-    printArray(fruits);
-
-    Arrays.fill(fruits, "banana");
-
-    printArray(fruits);
-
-  }
-
-  static void printArray(String[] array) {
-    for (String item : array) {
-      System.out.println(item);
-    }
   }
 }
